@@ -1,0 +1,1383 @@
+<html>
+<head>
+<title>TestNG:  ParaBankTests</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>ParaBankTests</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/17</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Oct 01 23:36:45 IST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>0 seconds (913 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.fintech.tests.AuthTests.setup()'><b>setup</b><br>Test class: com.fintech.tests.AuthTests<br>Parameters: chrome</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1665197552", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1665197552'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.AuthTests@5fbe4146</td></tr>
+<tr>
+<td title='com.fintech.tests.ContactTests.setup()'><b>setup</b><br>Test class: com.fintech.tests.ContactTests<br>Parameters: chrome</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace806511723", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace806511723'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.ContactTests@3c3d9b6b</td></tr>
+<tr>
+<td title='com.fintech.tests.LoginTests.setup()'><b>setup</b><br>Test class: com.fintech.tests.LoginTests<br>Parameters: chrome</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace71706941", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace71706941'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.LoginTests@305b7c14</td></tr>
+<tr>
+<td title='com.fintech.tests.NavigationUITests.setup()'><b>setup</b><br>Test class: com.fintech.tests.NavigationUITests<br>Parameters: chrome</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace580673921", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace580673921'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.NavigationUITests@79d8407f</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.setup()'><b>setup</b><br>Test class: com.fintech.tests.AccountTests<br>Parameters: chrome</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1349182676", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1349182676'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.AccountTests@7d8704ef</td></tr>
+<tr>
+<td title='com.fintech.tests.TransferTests.setup()'><b>setup</b><br>Test class: com.fintech.tests.TransferTests<br>Parameters: chrome</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace155361948", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace155361948'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.TransferTests@13b6aecc</td></tr>
+<tr>
+<td title='com.fintech.tests.LoanTests.setup()'><b>setup</b><br>Test class: com.fintech.tests.LoanTests<br>Parameters: chrome</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1565740893", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1565740893'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.LoanTests@158a8276</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.fintech.tests.TransferTests.setupPage()'><b>setupPage</b><br>Test class: com.fintech.tests.TransferTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.TransferTests@13b6aecc</td></tr>
+<tr>
+<td title='com.fintech.tests.ContactTests.setupPage()'><b>setupPage</b><br>Test class: com.fintech.tests.ContactTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.ContactTests@3c3d9b6b</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.setupPage()'><b>setupPage</b><br>Test class: com.fintech.tests.AccountTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.AccountTests@7d8704ef</td></tr>
+<tr>
+<td title='com.fintech.tests.LoginTests.afterMethod()'><b>afterMethod</b><br>Test class: com.fintech.tests.LoginTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.LoginTests@305b7c14</td></tr>
+<tr>
+<td title='com.fintech.tests.LoginTests.afterMethod()'><b>afterMethod</b><br>Test class: com.fintech.tests.LoginTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.LoginTests@305b7c14</td></tr>
+<tr>
+<td title='com.fintech.tests.LoginTests.setupPage()'><b>setupPage</b><br>Test class: com.fintech.tests.LoginTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.LoginTests@305b7c14</td></tr>
+<tr>
+<td title='com.fintech.tests.LoanTests.afterMethod()'><b>afterMethod</b><br>Test class: com.fintech.tests.LoanTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.LoanTests@158a8276</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.setupPage()'><b>setupPage</b><br>Test class: com.fintech.tests.AccountTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.AccountTests@7d8704ef</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.afterMethod()'><b>afterMethod</b><br>Test class: com.fintech.tests.AccountTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.AccountTests@7d8704ef</td></tr>
+<tr>
+<td title='com.fintech.tests.AuthTests.teardown()'><b>teardown</b><br>Test class: com.fintech.tests.AuthTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.AuthTests@5fbe4146</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.setupPage()'><b>setupPage</b><br>Test class: com.fintech.tests.AccountTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.AccountTests@7d8704ef</td></tr>
+<tr>
+<td title='com.fintech.tests.ContactTests.teardown()'><b>teardown</b><br>Test class: com.fintech.tests.ContactTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.ContactTests@3c3d9b6b</td></tr>
+<tr>
+<td title='com.fintech.tests.AuthTests.afterMethod()'><b>afterMethod</b><br>Test class: com.fintech.tests.AuthTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.AuthTests@5fbe4146</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.afterMethod()'><b>afterMethod</b><br>Test class: com.fintech.tests.AccountTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.AccountTests@7d8704ef</td></tr>
+<tr>
+<td title='com.fintech.tests.ContactTests.afterMethod()'><b>afterMethod</b><br>Test class: com.fintech.tests.ContactTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.ContactTests@3c3d9b6b</td></tr>
+<tr>
+<td title='com.fintech.tests.ContactTests.setupPage()'><b>setupPage</b><br>Test class: com.fintech.tests.ContactTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.ContactTests@3c3d9b6b</td></tr>
+<tr>
+<td title='com.fintech.tests.NavigationUITests.teardown()'><b>teardown</b><br>Test class: com.fintech.tests.NavigationUITests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.NavigationUITests@79d8407f</td></tr>
+<tr>
+<td title='com.fintech.tests.LoginTests.teardown()'><b>teardown</b><br>Test class: com.fintech.tests.LoginTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.LoginTests@305b7c14</td></tr>
+<tr>
+<td title='com.fintech.tests.NavigationUITests.afterMethod()'><b>afterMethod</b><br>Test class: com.fintech.tests.NavigationUITests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.NavigationUITests@79d8407f</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.setupPage()'><b>setupPage</b><br>Test class: com.fintech.tests.AccountTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.AccountTests@7d8704ef</td></tr>
+<tr>
+<td title='com.fintech.tests.LoginTests.setupPage()'><b>setupPage</b><br>Test class: com.fintech.tests.LoginTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.LoginTests@305b7c14</td></tr>
+<tr>
+<td title='com.fintech.tests.LoginTests.setupPage()'><b>setupPage</b><br>Test class: com.fintech.tests.LoginTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.LoginTests@305b7c14</td></tr>
+<tr>
+<td title='com.fintech.tests.LoginTests.afterMethod()'><b>afterMethod</b><br>Test class: com.fintech.tests.LoginTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.LoginTests@305b7c14</td></tr>
+<tr>
+<td title='com.fintech.tests.LoginTests.setupPage()'><b>setupPage</b><br>Test class: com.fintech.tests.LoginTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.LoginTests@305b7c14</td></tr>
+<tr>
+<td title='com.fintech.tests.ContactTests.afterMethod()'><b>afterMethod</b><br>Test class: com.fintech.tests.ContactTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.ContactTests@3c3d9b6b</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.afterMethod()'><b>afterMethod</b><br>Test class: com.fintech.tests.AccountTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.AccountTests@7d8704ef</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.teardown()'><b>teardown</b><br>Test class: com.fintech.tests.AccountTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.AccountTests@7d8704ef</td></tr>
+<tr>
+<td title='com.fintech.tests.TransferTests.afterMethod()'><b>afterMethod</b><br>Test class: com.fintech.tests.TransferTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.TransferTests@13b6aecc</td></tr>
+<tr>
+<td title='com.fintech.tests.LoanTests.teardown()'><b>teardown</b><br>Test class: com.fintech.tests.LoanTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.LoanTests@158a8276</td></tr>
+<tr>
+<td title='com.fintech.tests.NavigationUITests.setupPage()'><b>setupPage</b><br>Test class: com.fintech.tests.NavigationUITests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.NavigationUITests@79d8407f</td></tr>
+<tr>
+<td title='com.fintech.tests.AuthTests.setupPage()'><b>setupPage</b><br>Test class: com.fintech.tests.AuthTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.AuthTests@5fbe4146</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.afterMethod()'><b>afterMethod</b><br>Test class: com.fintech.tests.AccountTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.AccountTests@7d8704ef</td></tr>
+<tr>
+<td title='com.fintech.tests.LoanTests.setupPage()'><b>setupPage</b><br>Test class: com.fintech.tests.LoanTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.LoanTests@158a8276</td></tr>
+<tr>
+<td title='com.fintech.tests.TransferTests.teardown()'><b>teardown</b><br>Test class: com.fintech.tests.TransferTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.TransferTests@13b6aecc</td></tr>
+<tr>
+<td title='com.fintech.tests.NavigationUITests.afterMethod()'><b>afterMethod</b><br>Test class: com.fintech.tests.NavigationUITests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.NavigationUITests@79d8407f</td></tr>
+<tr>
+<td title='com.fintech.tests.NavigationUITests.setupPage()'><b>setupPage</b><br>Test class: com.fintech.tests.NavigationUITests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.NavigationUITests@79d8407f</td></tr>
+<tr>
+<td title='com.fintech.tests.LoginTests.afterMethod()'><b>afterMethod</b><br>Test class: com.fintech.tests.LoginTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.LoginTests@305b7c14</td></tr>
+<tr>
+<td title='com.fintech.tests.TransferTests.setupPage()'><b>setupPage</b><br>Test class: com.fintech.tests.TransferTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.TransferTests@13b6aecc</td></tr>
+<tr>
+<td title='com.fintech.tests.TransferTests.afterMethod()'><b>afterMethod</b><br>Test class: com.fintech.tests.TransferTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.TransferTests@13b6aecc</td></tr>
+<tr>
+<td title='com.fintech.tests.LoanTests.setupPage()'><b>setupPage</b><br>Test class: com.fintech.tests.LoanTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.LoanTests@158a8276</td></tr>
+<tr>
+<td title='com.fintech.tests.LoanTests.afterMethod()'><b>afterMethod</b><br>Test class: com.fintech.tests.LoanTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.LoanTests@158a8276</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.fintech.tests.TransferTests.testTransferFunds()'><b>testTransferFunds</b><br>Test class: com.fintech.tests.TransferTests<br>Parameters: username2, password2</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace303240439", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace303240439'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.TransferTests@13b6aecc</td></tr>
+<tr>
+<td title='com.fintech.tests.LoginTests.testInvalidPassword()'><b>testInvalidPassword</b><br>Test class: com.fintech.tests.LoginTests</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1744189907", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1744189907'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.LoginTests@305b7c14</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.testOpenSavingsAccount()'><b>testOpenSavingsAccount</b><br>Test class: com.fintech.tests.AccountTests<br>Parameters: username1, password1</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace656479172", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace656479172'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.AccountTests@7d8704ef</td></tr>
+<tr>
+<td title='com.fintech.tests.LoanTests.testApplyLoan()'><b>testApplyLoan</b><br>Test class: com.fintech.tests.LoanTests<br>Parameters: username2, password2</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1371957475", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1371957475'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.LoanTests@158a8276</td></tr>
+<tr>
+<td title='com.fintech.tests.NavigationUITests.testNavigationLinks()'><b>testNavigationLinks</b><br>Test class: com.fintech.tests.NavigationUITests<br>Parameters: username1, password1</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2032079962", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2032079962'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.NavigationUITests@79d8407f</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.testOpenCheckingAccount()'><b>testOpenCheckingAccount</b><br>Test class: com.fintech.tests.AccountTests<br>Parameters: username1, password1</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1424082571", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1424082571'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.AccountTests@7d8704ef</td></tr>
+<tr>
+<td title='com.fintech.tests.ContactTests.testSubmitContactForm()'><b>testSubmitContactForm</b><br>Test class: com.fintech.tests.ContactTests<br>Parameters: username2, password2</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1450652220", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1450652220'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.ContactTests@3c3d9b6b</td></tr>
+<tr>
+<td title='com.fintech.tests.LoginTests.testUnregisteredUser()'><b>testUnregisteredUser</b><br>Test class: com.fintech.tests.LoginTests</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace658909832", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace658909832'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.LoginTests@305b7c14</td></tr>
+<tr>
+<td title='com.fintech.tests.LoginTests.testValidLogin()'><b>testValidLogin</b><br>Test class: com.fintech.tests.LoginTests<br>Parameters: username1, password1</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace767904468", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace767904468'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.LoginTests@305b7c14</td></tr>
+<tr>
+<td title='com.fintech.tests.LoginTests.testValidLogin()'><b>testValidLogin</b><br>Test class: com.fintech.tests.LoginTests<br>Parameters: username2, password2</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1259174396", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1259174396'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.LoginTests@305b7c14</td></tr>
+<tr>
+<td title='com.fintech.tests.TransferTests.testTransferFunds()'><b>testTransferFunds</b><br>Test class: com.fintech.tests.TransferTests<br>Parameters: username1, password1</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1397381784", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1397381784'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.TransferTests@13b6aecc</td></tr>
+<tr>
+<td title='com.fintech.tests.NavigationUITests.testNavigationLinks()'><b>testNavigationLinks</b><br>Test class: com.fintech.tests.NavigationUITests<br>Parameters: username2, password2</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace252277567", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace252277567'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.NavigationUITests@79d8407f</td></tr>
+<tr>
+<td title='com.fintech.tests.LoanTests.testApplyLoan()'><b>testApplyLoan</b><br>Test class: com.fintech.tests.LoanTests<br>Parameters: username1, password1</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1297502382", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1297502382'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.LoanTests@158a8276</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.testOpenSavingsAccount()'><b>testOpenSavingsAccount</b><br>Test class: com.fintech.tests.AccountTests<br>Parameters: username2, password2</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace760357227", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace760357227'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.AccountTests@7d8704ef</td></tr>
+<tr>
+<td title='com.fintech.tests.AuthTests.testLoginLogoutFlow()'><b>testLoginLogoutFlow</b><br>Test class: com.fintech.tests.AuthTests</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace33533830", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace33533830'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.AuthTests@5fbe4146</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.testOpenCheckingAccount()'><b>testOpenCheckingAccount</b><br>Test class: com.fintech.tests.AccountTests<br>Parameters: username2, password2</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace658404420", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace658404420'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.AccountTests@7d8704ef</td></tr>
+<tr>
+<td title='com.fintech.tests.ContactTests.testSubmitContactForm()'><b>testSubmitContactForm</b><br>Test class: com.fintech.tests.ContactTests<br>Parameters: username1, password1</td>
+<td><div><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 23 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2067180044", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2067180044'><pre>java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:143)
+	at io.github.bonigarcia.wdm.WebDriverManager.&lt;init&gt;(WebDriverManager.java:225)
+	at io.github.bonigarcia.wdm.managers.ChromeDriverManager.&lt;init&gt;(ChromeDriverManager.java:51)
+	at io.github.bonigarcia.wdm.WebDriverManager.chromedriver(WebDriverManager.java:236)
+	at com.fintech.utils.DriverFactory.initDriver(DriverFactory.java:23)
+	at com.fintech.tests.BaseTest.setup(BaseTest.java:19)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.ContactTests@3c3d9b6b</td></tr>
+</table><p>
+</body>
+</html>
