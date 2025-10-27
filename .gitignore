@@ -1,0 +1,7 @@
+# Ignore screenshots and build artifacts
+target/screenshots/
+*.png
+*.class
+*.jar
+/test-output/
+/target/
