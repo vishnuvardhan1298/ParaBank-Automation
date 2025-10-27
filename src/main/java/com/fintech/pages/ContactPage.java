@@ -1,59 +1,105 @@
 package com.fintech.pages;
 
-import java.time.Duration;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import java.util.List;
+import org.openqa.selenium.*;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class ContactPage extends BasePage {
-  private By name = By.id("name");
-  private By email = By.id("email");
-  private By phone = By.id("phone");
-  private By message = By.id("message");
-  private By submitBtn = By.xpath("//input[@value='Send' or @type='submit']");
-  private By successMsg = By.cssSelector("#rightPanel .title, #rightPanel .result");
-  private By errorMsg = By.cssSelector("#rightPanel .error");
 
-  private By contactHeader = By.xpath("//h1[contains(text(),'Update Profile')]");
+    @FindBy(id = "name")
+    private WebElement nameField;
 
+    @FindBy(id = "email")
+    private WebElement emailField;
 
+    @FindBy(id = "phone")
+    private WebElement phoneField;
 
-  public ContactPage(org.openqa.selenium.WebDriver driver) { super(driver); }
+    @FindBy(id = "message")
+    private WebElement messageField;
 
-  public void enterName(String n) { type(name, n); }
+    @FindBy(xpath = "//input[@value='Send' or @type='submit']")
+    private WebElement submitButton;
 
-  public void enterEmail(String e) { type(email, e); }
+    @FindBy(css = "#rightPanel .title, #rightPanel .result")
+    private WebElement successMessage;
 
-  public void enterPhone(String p) { type(phone, p); }
+    @FindBy(css = "#rightPanel .error")
+    private WebElement errorMessage;
 
-  public void enterMessage(String m) { type(message, m); }
+    @FindBy(xpath = "//h1[contains(text(),'Customer Care')]")
+    private WebElement contactHeader;
 
-  public void clickSend() { click(submitBtn); }
+    public ContactPage(WebDriver driver) {
+        super(driver);
+        PageFactory.initElements(driver, this);
+    }
 
-  public String getResponse() {
-    String r = getText(successMsg);
-    if (r.isEmpty()) r = getText(errorMsg);
-    return r;
-  }
-  
+    @Override
+    public boolean isLoaded() {
+        return isDisplayed(contactHeader);
+    }
 
-  public boolean isLoaded() {
-	    try {
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	        WebElement header = wait.until(ExpectedConditions.presenceOfElementLocated(contactHeader));
-	        System.out.println("Header Text: " + header.getText());
-	        return header.isDisplayed();
-	    } catch (Exception e) {
-	        System.out.println("ContactPage isLoaded() failed: " + e.getMessage());
-	        return false;
-	    }
-	}
+    public ContactPage openForm() {
+        click(By.linkText("Contact Us"));
+        waitForVisibility(nameField);
+        System.out.println("✅ Contact form opened.");
+        return this;
+    }
 
+    public ContactPage enterName(String name) {
+        type(nameField, name);
+        return this;
+    }
 
+    public ContactPage enterEmail(String email) {
+        type(emailField, email);
+        return this;
+    }
 
-    public boolean isSubmitted() { return !getResponse().isEmpty(); }
+    public ContactPage enterPhone(String phone) {
+        type(phoneField, phone);
+        return this;
+    }
+
+    public ContactPage enterMessage(String message) {
+        type(messageField, message);
+        return this;
+    }
+
+    public ContactPage clickSend() {
+        click(submitButton);
+        return this;
+    }
+
+    public String getResponse() {
+        String response = getText(successMessage);
+        if (response.isEmpty()) response = getText(errorMessage);
+        if (response.equalsIgnoreCase("customer care")) response = "";
+
+        if (response.isEmpty()) {
+            try {
+                List<WebElement> candidates = driver.findElements(By.cssSelector("#rightPanel p, #rightPanel div"));
+                for (WebElement el : candidates) {
+                    String text = el.getText().trim();
+                    if (!text.equalsIgnoreCase("customer care") && !text.isEmpty()) {
+                        response = text;
+                        break;
+                    }
+                }
+            } catch (Exception ignored) {}
+        }
+
+        if (response.isEmpty()) {
+            captureScreenshot("ContactResponseMissing");
+        }
+
+        return response;
+    }
+
+    public boolean isSubmitted() {
+        return !getResponse().isEmpty();
+    }
 }
-
 

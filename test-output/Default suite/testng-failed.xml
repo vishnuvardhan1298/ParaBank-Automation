@@ -6,13 +6,15 @@
       <class name="com.fintech.tests.TransferTests">
         <methods>
           <include name="startTest"/>
+          <include name="validateSimpleTransferSuccess"/>
           <include name="finishReport"/>
           <include name="initReport"/>
-          <include name="setupClass"/>
+          <include name="setupAccountPage"/>
+          <include name="beforeClassLog"/>
+          <include name="setupTransferContext"/>
           <include name="afterMethod"/>
-          <include name="tearDownClass"/>
-          <include name="resolveAccounts"/>
-          <include name="validateFundsTransfer" invocation-numbers="0"/>
+          <include name="setupMethod"/>
+          <include name="validateFundsTransfer"/>
         </methods>
       </class> <!-- com.fintech.tests.TransferTests -->
     </classes>

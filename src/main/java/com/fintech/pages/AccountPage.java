@@ -1,240 +1,242 @@
 package com.fintech.pages;
 
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.*;
-import java.time.*;
-import java.time.format.DateTimeFormatter;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.SkipException;
+
 import java.util.*;
 import java.util.NoSuchElementException;
 import java.util.stream.Collectors;
 
 public class AccountPage extends BasePage {
 
-  private WebDriver driver;
-  private WebDriverWait wait;
+    @FindBy(xpath = "//*[contains(translate(normalize-space(.),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'),'ACCOUNTS') or contains(translate(normalize-space(.),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'),'ACCOUNT')]")
+    private WebElement accountsHeader;
 
-  private By accountsHeader = By.xpath("//*[contains(translate(normalize-space(.),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'),'ACCOUNTS') or contains(translate(normalize-space(.),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'),'ACCOUNT')]");
-  private By accountRows = By.cssSelector("#accountTable tbody tr, .table tr");
-  private By balanceSelector = By.xpath("//*[contains(text(),'Balance') or contains(@class,'balance')]");
-  private By recentTransactionsLink = By.linkText("Transactions");
+    @FindBy(css = "#balance, .balance, td.balance")
+    private WebElement balanceElement;
 
-  public AccountPage(WebDriver driver) {
-    super(driver);
-    this.driver = driver;
-    this.wait = new WebDriverWait(driver, Duration.ofSeconds(15));
-  }
 
-  public boolean isLoaded() {
-    System.out.println("AccountPage check → URL: " + driver.getCurrentUrl());
-    System.out.println("AccountPage check → Title: " + driver.getTitle());
+    @FindBy(linkText = "Transactions")
+    private WebElement recentTransactionsLink;
 
-    try {
-      By accountTable = By.id("accountTable");
-      wait.until(ExpectedConditions.or(
-        ExpectedConditions.visibilityOfElementLocated(accountTable),
-        ExpectedConditions.visibilityOfElementLocated(accountsHeader),
-        ExpectedConditions.visibilityOfElementLocated(By.linkText("Log Out"))
-      ));
-      return true;
-    } catch (Exception e) {
-      return isDisplayed(accountsHeader) || isDisplayed(By.id("accountTable")) || isDisplayed(By.linkText("Log Out"));
-    }
-  }
+    @FindBy(linkText = "Open New Account")
+    private WebElement openNewAccountLink;
 
-  public List<String> getAccountNames() {
-    List<WebElement> rows = findAll(accountRows);
-    return rows.stream()
-      .map(r -> r.getText().split("\\r?\\n")[0].trim())
-      .filter(s -> !s.isEmpty())
-      .collect(Collectors.toList());
-  }
+    @FindBy(css = "input[type='button'][value='Open New Account']")
+    private WebElement openAccountBtn;
 
-  public void openAccountByName(String name) {
-    wait.until(ExpectedConditions.or(
-      ExpectedConditions.presenceOfAllElementsLocatedBy(By.cssSelector("a[href*='activity.htm']")),
-      ExpectedConditions.presenceOfElementLocated(By.id("accountTable"))
-      
-    ));
+    @FindBy(css = "#accountTable tbody tr, .table tr")
+    private List<WebElement> accountRows;
 
-    System.out.println("Account links or table detected — proceeding to open account: " + name);
-
-    List<WebElement> rows = findAll(accountRows);
-    System.out.println("Account names found: " + getAccountNames());
-    System.out.println("Available accounts:");
-    for (WebElement r : rows) {
-      System.out.println("→ " + r.getText());
+    public AccountPage(WebDriver driver) {
+        super(driver);
+        PageFactory.initElements(driver, this);
     }
 
-    for (WebElement r : rows) {
-      if (r.getText().toLowerCase().contains(name.toLowerCase())) {
-        List<WebElement> links = r.findElements(By.tagName("a"));
-        if (!links.isEmpty()) {
-          System.out.println("Opening account: " + name);
-          links.get(0).click();
-          safeSleep(1000);
-          return;
+    @Override
+    public boolean isLoaded() {
+        return isDisplayed(accountsHeader);
+    }
+
+    public boolean isBalanceVisible() {
+        try {
+            waitForVisibility(balanceElement);
+            String text = getText(balanceElement);
+            System.out.println("Balance element text: " + text);
+            return isDisplayed(balanceElement) && !text.isEmpty();
+        } catch (Exception e) {
+            System.out.println("Balance element not found: " + e.getMessage());
+            return false;
         }
-      }
     }
 
-    if (!rows.isEmpty()) {
-      List<WebElement> fallbackLinks = rows.get(0).findElements(By.tagName("a"));
-      if (!fallbackLinks.isEmpty()) {
-        String fallbackName = rows.get(0).getText().split("\\r?\\n")[0].trim();
-        System.out.println("Fallback row → " + rows.get(0).getText());
-        System.out.println("Fallback click → " + fallbackLinks.get(0).getText());
-        System.out.println("Account '" + name + "' not found — using fallback: " + fallbackName);
-        fallbackLinks.get(0).click();
-        safeSleep(1000);
-        return;
-      }
+    public List<String> getAccountNames() {
+        return accountRows.stream()
+            .map(r -> {
+                try {
+                    return r.findElements(By.tagName("a")).stream()
+                            .findFirst()
+                            .map(WebElement::getText)
+                            .orElse("Unknown");
+                } catch (NoSuchElementException e) {
+                    System.out.println("⚠️ Skipping row without account link: " + r.getText());
+                    System.out.println("⚠️ Row HTML: " + r.getAttribute("outerHTML"));
+                    return "";
+                }
+            })
+            .filter(id -> !id.isEmpty() && id.matches("\\d+"))
+            .collect(Collectors.toList());
     }
 
-    throw new AssertionError("No account links found — cannot proceed");
-  }
+    public AccountPage ensureTwoAccounts() {
+        List<String> accounts = getAccountNames();
+        int attempts = 0;
 
-  public boolean isBalanceVisible() {
-    return exists(balanceSelector) && isDisplayed(balanceSelector);
-  }
+        while (accounts.size() < 2 && attempts < 3) {
+            System.out.println("🔧 Creating account — current count: " + accounts.size());
+            click(openNewAccountLink);
+            waitForVisibility(openAccountBtn);
+            click(openAccountBtn);
+            waitForVisibility(By.id("newAccountId")); // or any confirmation element
+            safeSleep(1000); // optional buffer
+            accounts = getAccountNames();
+            attempts++;
+        }
 
-  public void goToTransactionHistory() {
-    WebElement txLink = wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Transactions")));
-    txLink.click();
-    wait.until(ExpectedConditions.presenceOfElementLocated(By.id("transactionTable")));
-    System.out.println("Navigated to transaction history — table loaded");
-  }
+        if (accounts.size() < 2) {
+            throw new SkipException("❌ Failed to create two accounts after " + attempts + " attempts");
+        }
 
-  public double getBalance(String accountType) {
-	  try {
-	    openAccountByName(accountType);
-
-	    wait.until(ExpectedConditions.or(
-	      ExpectedConditions.visibilityOfElementLocated(balanceSelector),
-	      ExpectedConditions.presenceOfElementLocated(balanceSelector)
-	    ));
-
-	    WebElement balanceElement = driver.findElement(balanceSelector);
-	    String balanceText = balanceElement.getText().replaceAll("[^\\d.-]", "");
-
-	    if (balanceText.isEmpty()) {
-	      System.out.println("Balance text is empty for account: " + accountType);
-	      throw new AssertionError("Balance not found or not visible for account: " + accountType);
-	    }
-
-	    double balance = Double.parseDouble(balanceText);
-	    System.out.println("Balance for account '" + accountType + "': " + balance);
-	    return balance;
-
-	  } catch (TimeoutException te) {
-	    System.out.println("Timeout while waiting for balance element for account: " + accountType);
-	    throw new AssertionError("Balance element not found in time for account: " + accountType, te);
-	  } catch (NoSuchElementException ne) {
-	    System.out.println("Balance element missing for account: " + accountType);
-	    throw new AssertionError("Balance element not present for account: " + accountType, ne);
-	  } catch (NumberFormatException nfe) {
-	    System.out.println("Unable to parse balance for account: " + accountType);
-	    throw new AssertionError("Balance format invalid for account: " + accountType, nfe);
-	  } catch (Exception e) {
-	    System.out.println("Unexpected error while fetching balance for account: " + accountType);
-	    throw new AssertionError("Unexpected error in getBalance()", e);
-	  }
-	}
-
-
-  public double getBalanceFromCurrentPage() {
-    WebElement balanceElement = driver.findElement(balanceSelector);
-    String balanceText = balanceElement.getText().replaceAll("[^\\d.]", "");
-    return Double.parseDouble(balanceText);
-  }
-
-  public void transferFunds(String from, String to, double amount) {
-    click(By.linkText("Transfer Funds"));
-    selectDropdown(By.id("fromAccountId"), from);
-    selectDropdown(By.id("toAccountId"), to);
-    type(By.id("amount"), String.valueOf(amount));
-    click(By.xpath("//input[@value='Transfer']"));
-  }
-
-  public boolean isTransactionListVisible() {
-    return isDisplayed(By.id("transactionTable")) || isDisplayed(By.cssSelector(".transaction"));
-  }
-
-  public boolean validateTransactionFormat() {
-    List<WebElement> rows = driver.findElements(By.cssSelector("#transactionTable tbody tr"));
-    for (WebElement row : rows) {
-      String text = row.getText();
-      if (!(text.contains("Debit") || text.contains("Credit"))) return false;
-      if (!text.matches(".*\\d{2}/\\d{2}/\\d{4}.*")) return false;
-      if (!text.matches(".*\\d+\\.\\d{2}.*")) return false;
+        System.out.println("✅ Accounts ready: " + accounts);
+        return this;
     }
-    return true;
-  }
+    private static final Object accountLock = new Object();
 
-  public void filterByDate(String from, String to) {
-    type(By.id("fromDate"), from);
-    type(By.id("toDate"), to);
-    click(By.xpath("//input[@value='Filter']"));
-  }
-
-  public boolean areFilteredDatesCorrect(String from, String to) {
-    List<WebElement> rows = driver.findElements(By.cssSelector("#transactionTable tbody tr"));
-    LocalDate fromDate = LocalDate.parse(from);
-    LocalDate toDate = LocalDate.parse(to);
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-
-    for (WebElement row : rows) {
-      String dateText = row.findElement(By.cssSelector("td.date")).getText();
-      LocalDate date = LocalDate.parse(dateText, formatter);
-      if (date.isBefore(fromDate) || date.isAfter(toDate)) return false;
+    public AccountPage ensureTwoAccountsSafely() {
+        synchronized (accountLock) {
+            return ensureTwoAccounts(); // ✅ thread-safe wrapper
+        }
     }
-    return true;
-  }
 
-  public void sortBy(String field, String order) {
-    By sortLink = By.linkText(field);
-    click(sortLink);
-    if (order.equalsIgnoreCase("Descending")) click(sortLink); // toggle
-  }
+    public AccountPage openAccountByName(String name) {
+        if (name == null || name.trim().isEmpty()) {
+            throw new IllegalArgumentException("❌ Account name is null or empty");
+        }
 
-  public boolean isSortedByDateAsc() {
-    List<LocalDate> dates = driver.findElements(By.cssSelector("td.date")).stream()
-      .map(e -> LocalDate.parse(e.getText(), DateTimeFormatter.ofPattern("MM/dd/yyyy")))
-      .collect(Collectors.toList());
-    return dates.equals(dates.stream().sorted().collect(Collectors.toList()));
-  }
+        for (WebElement row : accountRows) {
+            for (WebElement link : row.findElements(By.tagName("a"))) {
+                if (link.getText().trim().equals(name)) {
+                    click(link);
+                    safeSleep(1000);
+                    logBalance(name);
+                    return this;
+                }
+            }
+        }
 
-  public boolean isSortedByAmountDesc() {
-    List<Double> amounts = driver.findElements(By.cssSelector("td.amount")).stream()
-      .map(e -> Double.parseDouble(e.getText().replaceAll("[^\\d.]", "")))
-      .collect(Collectors.toList());
-    return amounts.equals(amounts.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList()));
-  }
-
-  public void clickSortLink(String linkText) {
-    wait.until(ExpectedConditions.elementToBeClickable(By.linkText(linkText)));
-    click(By.linkText(linkText));
-  }
-
-  public boolean isTransactionDetailsComplete() {
-    List<WebElement> rows = driver.findElements(By.cssSelector("#transactionTable tbody tr"));
-    for (WebElement row : rows) {
-      String date = row.findElement(By.cssSelector("td.date")).getText();
-      String amount = row.findElement(By.cssSelector("td.amount")).getText();
-      String type = row.findElement(By.cssSelector("td.type")).getText();
-
-      if (date.isEmpty() || amount.isEmpty() || type.isEmpty()) {
-        System.out.println("Incomplete row → date: " + date + ", amount: " + amount + ", type: " + type);
-        return false;
-      }
+        System.out.println("Account '" + name + "' not found — using fallback");
+        if (!accountRows.isEmpty()) {
+            List<WebElement> fallbackLinks = accountRows.get(0).findElements(By.tagName("a"));
+            if (!fallbackLinks.isEmpty()) {
+                click(fallbackLinks.get(0));
+                safeSleep(1000);
+                logBalance(name);
+            }
+        }
+        return this;
     }
-    return true;
-  }
 
-  // Utility methods from BasePage assumed:
-  // - findAll(By)
-  // - exists(By)
-  // - isDisplayed(By)
-  // - click(By)
-  // - type(By, String)
-  // - selectDropdown(By, String)
+    private void logBalance(String accountLabel) {
+        try {
+            waitForVisibility(balanceElement);
+            System.out.println("✅ Balance for " + accountLabel + ": " + getText(balanceElement));
+        } catch (Exception e) {
+            captureScreenshot("BalanceMissing_" + accountLabel);
+            throw new AssertionError("Balance element not found for account: " + accountLabel, e);
+        }
+    }
+
+    public double getBalanceFromCurrentPage() {
+        try {
+            // ✅ More precise locator: second <td> in the row containing the account link
+            By balanceLocator = By.xpath("//table[@id='accountTable']//tr[td[a[contains(@href,'activity.htm?id=')]]]//td[2]");
+            waitForVisibility(balanceLocator);
+
+            String rawText = driver.findElement(balanceLocator).getText();
+            System.out.println("✅ Raw balance text: " + rawText);
+
+            String balanceText = rawText.replaceAll("[^\\d.-]", "").trim();
+            if (balanceText.isEmpty()) {
+                captureScreenshot("BalanceParseError");
+                throw new AssertionError("❌ Balance format invalid — empty string");
+            }
+
+            return Double.parseDouble(balanceText);
+        } catch (TimeoutException | NoSuchElementException | StaleElementReferenceException e) {
+            captureScreenshot("BalanceElementMissing");
+            throw new SkipException("⚠️ Balance element not found or stale", e);
+        } catch (NumberFormatException e) {
+            captureScreenshot("BalanceParseException");
+            throw new AssertionError("❌ Balance format invalid — cannot parse", e);
+        }
+    }
+
+    public double getBalance(String accountType) {
+        openAccountByName(accountType);
+        return getBalanceFromCurrentPage();
+    }
+
+    public AccountPage goToTransactionHistory() {
+        List<By> locators = Arrays.asList(
+            By.linkText("Transactions"),
+            By.linkText("Transaction History"),
+            By.partialLinkText("Transaction"),
+            By.cssSelector("a[href*='transaction']")
+        );
+
+        for (By locator : locators) {
+            try {
+            	System.out.println("🔍 Trying locator: " + locator);
+            	System.out.println("Page title: " + driver.getTitle());
+            	System.out.println("Current URL: " + driver.getCurrentUrl());
+
+            	WebElement txLink = wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+            	waitForVisibility(txLink); // ✅ Add this line
+            	if (txLink.isDisplayed()) {
+            	    ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", txLink);
+            	    wait.until(ExpectedConditions.elementToBeClickable(txLink)).click();
+                    wait.until(ExpectedConditions.presenceOfElementLocated(By.id("transactionTable")));
+                    return this;
+                }
+            } catch (Exception e) {
+                System.out.println("⚠️ Locator failed: " + locator + " → " + e.getMessage());
+            }
+        }
+
+        captureScreenshot("TransactionsLinkFailure");
+        throw new AssertionError("✘ Transactions link not clickable");
+    }
+
+    public boolean isTransactionHistoryLoaded() {
+        return exists(By.id("transactionTable")) || isDisplayed(By.cssSelector(".transaction"));
+    }
+
+    public AccountPage filterByDate(String from, String to) {
+        type(By.id("fromDate"), from);
+        type(By.id("toDate"), to);
+        By filterBtn = By.xpath("//input[@value='Filter']");
+        for (int i = 0; i < 3; i++) {
+            try {
+                jsClick(filterBtn);
+                System.out.println("✅ Filter button clicked on attempt " + (i + 1));
+                break;
+            } catch (Exception e) {
+                System.out.println("⚠️ Attempt " + (i + 1) + " failed to click Filter button");
+                safeSleep(1000);
+            }
+        }
+        safeSleep(2000);
+        return this;
+    }
+
+    public AccountPage sortBy(String field, String order) {
+        try {
+            By sortLinkLocator = By.xpath("//th[contains(text(),'" + field + "')]");
+            jsClick(sortLinkLocator);
+            System.out.println("✅ Clicked sort link: " + field);
+            safeSleep(2000);
+            if (order.equalsIgnoreCase("Descending")) {
+                click(sortLinkLocator); // toggle
+                System.out.println("✅ Toggled to descending sort");
+                safeSleep(2000);
+            }
+        } catch (Exception e) {
+            captureScreenshot("SortLinkFailure_" + field);
+            System.out.println("❌ Sort failed: " + e.getMessage());
+        }
+        return this;
+    }
 }

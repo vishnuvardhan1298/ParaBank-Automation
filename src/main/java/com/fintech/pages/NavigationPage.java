@@ -2,57 +2,62 @@ package com.fintech.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class NavigationPage extends BasePage {
 
-  private By homeLink = By.xpath("//a[contains(@href,'index.htm') or contains(@class,'brand') or contains(@class,'logo')]");
-  private By accountsLink = By.linkText("Accounts Overview");
-  private By transferLink = By.linkText("Transfer Funds");
-  private By loanLink = By.linkText("Request Loan");
-  private By contactLink = By.linkText("Contact Us");
-  private By logo = By.cssSelector("a.brand, a.logo");
+    private By homeLink = By.xpath("//a[contains(@href,'index.htm') or contains(@class,'brand') or contains(@class,'logo')]");
+    private By accountsLink = By.linkText("Accounts Overview");
+    private By transferLink = By.linkText("Transfer Funds");
+    private By loanLink = By.linkText("Request Loan");
+    private By contactLink = By.linkText("Contact Us");
+    private By logo = By.cssSelector("div#headerPanel a[href*='index.htm']");
 
-  public NavigationPage(WebDriver driver) {
-    super(driver);
-  }
+    public NavigationPage(WebDriver driver) {
+        super(driver);
+    }
 
-  public void goHome() {
-    click(homeLink);
-  }
+    @Override
+    public boolean isLoaded() {
+        return isDisplayed(homeLink) || isDisplayed(logo);
+    }
 
-  public void goToAccounts() {
-    click(accountsLink);
-  }
+    public NavigationPage goHome() {
+        click(homeLink);
+        return this;
+    }
 
-  public void goToTransfer() {
-    click(transferLink);
-  }
+    public NavigationPage goToAccounts() {
+        click(accountsLink);
+        return this;
+    }
 
-  public void goToLoan() {
-    click(loanLink);
-  }
+    public NavigationPage goToTransfer() {
+        click(transferLink);
+        return this;
+    }
 
-  public void goToContact() {
-    click(contactLink);
-  }
+    public NavigationPage goToLoan() {
+        click(loanLink);
+        return this;
+    }
 
-  public void clickLogo() {
-	    By logo = By.cssSelector("div#headerPanel a[href*='index.htm']");
-	    wait.until(ExpectedConditions.elementToBeClickable(logo));
-	    click(logo);
-	}
+    public NavigationPage goToContact() {
+        click(contactLink);
+        return this;
+    }
 
+    public NavigationPage clickLogo() {
+        waitForClickable(logo);
+        click(logo);
+        return this;
+    }
 
-
-  public void clickNavLink(String linkText) {
-	    By navLink = By.xpath("//a[contains(text(),'" + linkText + "')]");
-	    safeSleep(1000); // Stabilize DOM
-	    wait.until(ExpectedConditions.presenceOfElementLocated(navLink));
-	    wait.until(ExpectedConditions.elementToBeClickable(navLink));
-	    click(navLink);
-	}
-
-
+    public NavigationPage clickNavLink(String linkText) {
+        By navLink = By.xpath("//a[contains(text(),'" + linkText + "')]");
+        safeSleep(1000); // Stabilize DOM
+        waitForClickable(navLink);
+        click(navLink);
+        return this;
+    }
 }
 

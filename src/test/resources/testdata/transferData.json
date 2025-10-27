@@ -1,0 +1,5 @@
+[
+  { "scenarioLabel": "VALID_TRANSFER", "amount": "1.00", "expectSuccess": true },
+  { "scenarioLabel": "SAME_ACCOUNT", "amount": "100", "expectSuccess": false },
+  { "scenarioLabel": "EMPTY_FIELDS", "amount": "0.00", "expectSuccess": false }
+]

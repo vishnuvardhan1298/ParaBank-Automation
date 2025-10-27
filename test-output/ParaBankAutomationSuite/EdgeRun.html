@@ -1,0 +1,1122 @@
+<html>
+<head>
+<title>TestNG:  EdgeRun</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>EdgeRun</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>32/3/12</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Oct 27 10:12:47 IST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>3076 seconds (3076757 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.fintech.tests.ContactTests.setupMethod()'><b>setupMethod</b><br>Test class: com.fintech.tests.ContactTests<br>Parameters: edge</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
+Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [598bc5e4f578b06a2c8d516b284b4d18, maximizeCurrentWindow {}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 141.0.3537.85, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:61906}, msedge: {msedgedriverVersion: 141.0.3537.99 (1b2f83d6a142..., userDataDir: C:\Users\hp\AppData\Local\T...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61906/devtoo..., se:cdpVersion: 141.0.3537.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 598bc5e4f578b06a2c8d516b284b4d18
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:402)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:358)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:188)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:1039)
+	at com.fintech.tests.BaseTest.setupMethod(BaseTest.java:51)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:385)
+	... 31 more
+... Removed 15 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2055136142", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2055136142'><pre>org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
+Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [598bc5e4f578b06a2c8d516b284b4d18, maximizeCurrentWindow {}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 141.0.3537.85, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:61906}, msedge: {msedgedriverVersion: 141.0.3537.99 (1b2f83d6a142..., userDataDir: C:\Users\hp\AppData\Local\T...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61906/devtoo..., se:cdpVersion: 141.0.3537.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 598bc5e4f578b06a2c8d516b284b4d18
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:402)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:358)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:188)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:1039)
+	at com.fintech.tests.BaseTest.setupMethod(BaseTest.java:51)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:601)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:385)
+	... 31 more
+</pre></div></td>
+<td>611</td>
+<td>com.fintech.tests.ContactTests@55f616cf</td></tr>
+<tr>
+<td title='com.fintech.tests.TransferTests.setupAccountsOnce()'><b>setupAccountsOnce</b><br>Test class: com.fintech.tests.TransferTests</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.navigate()&quot; because &quot;this.driver&quot; is null
+	at com.fintech.tests.BaseTest.loginAsJohn(BaseTest.java:139)
+	at com.fintech.tests.TransferTests.setupAccountsOnce(TransferTests.java:26)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace333456172", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace333456172'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.navigate()&quot; because &quot;this.driver&quot; is null
+	at com.fintech.tests.BaseTest.loginAsJohn(BaseTest.java:139)
+	at com.fintech.tests.TransferTests.setupAccountsOnce(TransferTests.java:26)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.TransferTests@3c947bc5</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.fintech.tests.TransferTests.setupTransferContext()'><b>setupTransferContext</b><br>Test class: com.fintech.tests.TransferTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.TransferTests@3c947bc5</td></tr>
+<tr>
+<td title='com.fintech.tests.TransferTests.setupTransferContext()'><b>setupTransferContext</b><br>Test class: com.fintech.tests.TransferTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.TransferTests@3c947bc5</td></tr>
+<tr>
+<td title='com.fintech.tests.TransferTests.setupTransferContext()'><b>setupTransferContext</b><br>Test class: com.fintech.tests.TransferTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.TransferTests@3c947bc5</td></tr>
+<tr>
+<td title='com.fintech.tests.TransferTests.setupTransferContext()'><b>setupTransferContext</b><br>Test class: com.fintech.tests.TransferTests</td>
+<td></td>
+<td>0</td>
+<td>com.fintech.tests.TransferTests@3c947bc5</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.testFullTransactionHistory()'><b>testFullTransactionHistory</b><br>Test class: com.fintech.tests.AccountTests</td>
+<td><div><pre>java.lang.AssertionError: Transaction history should be visible expected [true] but found [false]
+	at com.fintech.tests.AccountTests.testFullTransactionHistory(AccountTests.java:236)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace558410940", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace558410940'><pre>java.lang.AssertionError: Transaction history should be visible expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at com.fintech.tests.AccountTests.testFullTransactionHistory(AccountTests.java:236)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</pre></div></td>
+<td>82</td>
+<td>com.fintech.tests.AccountTests@5552768b</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.testCheckingAccountSummary()'><b>testCheckingAccountSummary</b><br>Test class: com.fintech.tests.AccountTests</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 33.384
+  (Session info: MicrosoftEdge=141.0.3537.85)
+Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [fafa3e946cd51eb37f396477c5739f9a, get {url=https://parabank.parasoft.com/parabank/index.htm}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 141.0.3537.85, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:62529}, msedge: {msedgedriverVersion: 141.0.3537.99 (1b2f83d6a142..., userDataDir: C:\Users\hp\AppData\Local\T...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62529/devtoo..., se:cdpVersion: 141.0.3537.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fafa3e946cd51eb37f396477c5739f9a
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:305)
+	at com.fintech.pages.BasePage.navigateTo(BasePage.java:27)
+	at com.fintech.pages.LoginPage.open(LoginPage.java:54)
+	at com.fintech.tests.AccountTests.loginAsJohn(AccountTests.java:33)
+	at com.fintech.tests.AccountTests.testCheckingAccountSummary(AccountTests.java:59)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1399237951", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1399237951'><pre>org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 33.384
+  (Session info: MicrosoftEdge=141.0.3537.85)
+Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [fafa3e946cd51eb37f396477c5739f9a, get {url=https://parabank.parasoft.com/parabank/index.htm}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 141.0.3537.85, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:62529}, msedge: {msedgedriverVersion: 141.0.3537.99 (1b2f83d6a142..., userDataDir: C:\Users\hp\AppData\Local\T...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62529/devtoo..., se:cdpVersion: 141.0.3537.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: fafa3e946cd51eb37f396477c5739f9a
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:305)
+	at com.fintech.pages.BasePage.navigateTo(BasePage.java:27)
+	at com.fintech.pages.LoginPage.open(LoginPage.java:54)
+	at com.fintech.tests.AccountTests.loginAsJohn(AccountTests.java:33)
+	at com.fintech.tests.AccountTests.testCheckingAccountSummary(AccountTests.java:59)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</pre></div></td>
+<td>71</td>
+<td>com.fintech.tests.AccountTests@5552768b</td></tr>
+<tr>
+<td title='com.fintech.tests.LoginTests.passwordMasking()'><b>passwordMasking</b><br>Test class: com.fintech.tests.LoginTests</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_CLOSED
+  (Session info: MicrosoftEdge=141.0.3537.85)
+Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [9db82d139ebac4ca3a4aabc064a36b32, get {url=https://parabank.parasoft.com/parabank/index.htm}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 141.0.3537.85, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:62884}, msedge: {msedgedriverVersion: 141.0.3537.99 (1b2f83d6a142..., userDataDir: C:\Users\hp\AppData\Local\T...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62884/devtoo..., se:cdpVersion: 141.0.3537.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9db82d139ebac4ca3a4aabc064a36b32
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:305)
+	at com.fintech.pages.BasePage.navigateTo(BasePage.java:27)
+	at com.fintech.pages.LoginPage.open(LoginPage.java:54)
+	at com.fintech.tests.LoginTests.passwordMasking(LoginTests.java:39)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1818106165", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1818106165'><pre>org.openqa.selenium.WebDriverException: unknown error: net::ERR_CONNECTION_CLOSED
+  (Session info: MicrosoftEdge=141.0.3537.85)
+Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [9db82d139ebac4ca3a4aabc064a36b32, get {url=https://parabank.parasoft.com/parabank/index.htm}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 141.0.3537.85, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:62884}, msedge: {msedgedriverVersion: 141.0.3537.99 (1b2f83d6a142..., userDataDir: C:\Users\hp\AppData\Local\T...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62884/devtoo..., se:cdpVersion: 141.0.3537.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9db82d139ebac4ca3a4aabc064a36b32
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
+	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:305)
+	at com.fintech.pages.BasePage.navigateTo(BasePage.java:27)
+	at com.fintech.pages.LoginPage.open(LoginPage.java:54)
+	at com.fintech.tests.LoginTests.passwordMasking(LoginTests.java:39)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</pre></div></td>
+<td>41</td>
+<td>com.fintech.tests.LoginTests@87a85e1</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.fintech.tests.NavigationUITests.topNavLinksLoadPages()'><b>topNavLinksLoadPages</b><br>Test class: com.fintech.tests.NavigationUITests<br>Parameters: Accounts Overview, overview.htm, class com.fintech.pages.AccountPage</td>
+<td></td>
+<td>10</td>
+<td>com.fintech.tests.NavigationUITests@1356d4d4</td></tr>
+<tr>
+<td title='com.fintech.tests.NavigationUITests.validateButtonsAreClickable()'><b>validateButtonsAreClickable</b><br>Test class: com.fintech.tests.NavigationUITests</td>
+<td></td>
+<td>48</td>
+<td>com.fintech.tests.NavigationUITests@1356d4d4</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.testTransactionFilterByDateRange()'><b>testTransactionFilterByDateRange</b><br>Test class: com.fintech.tests.AccountTests</td>
+<td></td>
+<td>99</td>
+<td>com.fintech.tests.AccountTests@5552768b</td></tr>
+<tr>
+<td title='com.fintech.tests.ContactTests.submitContactForm()'><b>submitContactForm</b><br>Test class: com.fintech.tests.ContactTests<br>Parameters: Test User, test@example.com, 9.999999999E9, This is a test message, true</td>
+<td></td>
+<td>26</td>
+<td>com.fintech.tests.ContactTests@55f616cf</td></tr>
+<tr>
+<td title='com.fintech.tests.AuthTests.loginWithExcelData()'><b>loginWithExcelData</b><br>Test class: com.fintech.tests.AuthTests<br>Parameters: notexist, demo, USER_NOT_EXIST</td>
+<td></td>
+<td>214</td>
+<td>com.fintech.tests.AuthTests@671a5887</td></tr>
+<tr>
+<td title='com.fintech.tests.LoginTests.rememberMeSimulation()'><b>rememberMeSimulation</b><br>Test class: com.fintech.tests.LoginTests</td>
+<td></td>
+<td>15</td>
+<td>com.fintech.tests.LoginTests@87a85e1</td></tr>
+<tr>
+<td title='com.fintech.tests.LoginTests.loginScenarios()'><b>loginScenarios</b><br>Test class: com.fintech.tests.LoginTests<br>Parameters: john, wrong, INVALID</td>
+<td></td>
+<td>183</td>
+<td>com.fintech.tests.LoginTests@87a85e1</td></tr>
+<tr>
+<td title='com.fintech.tests.NavigationUITests.verifyFontAndAlignment()'><b>verifyFontAndAlignment</b><br>Test class: com.fintech.tests.NavigationUITests</td>
+<td></td>
+<td>57</td>
+<td>com.fintech.tests.NavigationUITests@1356d4d4</td></tr>
+<tr>
+<td title='com.fintech.tests.AuthTests.loginWithExcelData()'><b>loginWithExcelData</b><br>Test class: com.fintech.tests.AuthTests<br>Parameters: john, wrong, INVALID</td>
+<td></td>
+<td>183</td>
+<td>com.fintech.tests.AuthTests@671a5887</td></tr>
+<tr>
+<td title='com.fintech.tests.NavigationUITests.checkParaBankConnectivity()'><b>checkParaBankConnectivity</b><br>Test class: com.fintech.tests.NavigationUITests</td>
+<td></td>
+<td>6</td>
+<td>com.fintech.tests.NavigationUITests@1356d4d4</td></tr>
+<tr>
+<td title='com.fintech.tests.LoginTests.loginScenarios()'><b>loginScenarios</b><br>Test class: com.fintech.tests.LoginTests<br>Parameters: john, demo, SUCCESS</td>
+<td></td>
+<td>21</td>
+<td>com.fintech.tests.LoginTests@87a85e1</td></tr>
+<tr>
+<td title='com.fintech.tests.NavigationUITests.topNavLinksLoadPages()'><b>topNavLinksLoadPages</b><br>Test class: com.fintech.tests.NavigationUITests<br>Parameters: Request Loan, requestloan.htm, class com.fintech.pages.LoanPage</td>
+<td></td>
+<td>12</td>
+<td>com.fintech.tests.NavigationUITests@1356d4d4</td></tr>
+<tr>
+<td title='com.fintech.tests.LoginTests.sessionTimeoutSimulation()'><b>sessionTimeoutSimulation</b><br>Test class: com.fintech.tests.LoginTests</td>
+<td></td>
+<td>54</td>
+<td>com.fintech.tests.LoginTests@87a85e1</td></tr>
+<tr>
+<td title='com.fintech.tests.AuthTests.logoutAfterLogin()'><b>logoutAfterLogin</b><br>Test class: com.fintech.tests.AuthTests<br>Parameters: notexist, demo</td>
+<td></td>
+<td>202</td>
+<td>com.fintech.tests.AuthTests@671a5887</td></tr>
+<tr>
+<td title='com.fintech.tests.LoginTests.loginScenarios()'><b>loginScenarios</b><br>Test class: com.fintech.tests.LoginTests<br>Parameters: notexist, any, USER_NOT_EXIST</td>
+<td></td>
+<td>194</td>
+<td>com.fintech.tests.LoginTests@87a85e1</td></tr>
+<tr>
+<td title='com.fintech.tests.NavigationUITests.topNavLinksLoadPages()'><b>topNavLinksLoadPages</b><br>Test class: com.fintech.tests.NavigationUITests<br>Parameters: Contact Us, contact.htm, class com.fintech.pages.ContactPage</td>
+<td></td>
+<td>9</td>
+<td>com.fintech.tests.NavigationUITests@1356d4d4</td></tr>
+<tr>
+<td title='com.fintech.tests.LoginTests.loginScenarios()'><b>loginScenarios</b><br>Test class: com.fintech.tests.LoginTests<br>Parameters: , , EMPTY</td>
+<td></td>
+<td>193</td>
+<td>com.fintech.tests.LoginTests@87a85e1</td></tr>
+<tr>
+<td title='com.fintech.tests.AuthTests.sessionTimeoutSimulation()'><b>sessionTimeoutSimulation</b><br>Test class: com.fintech.tests.AuthTests</td>
+<td></td>
+<td>310</td>
+<td>com.fintech.tests.AuthTests@671a5887</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.testAccountFunctionality()'><b>testAccountFunctionality</b><br>Test class: com.fintech.tests.AccountTests<br>Parameters: Sort transactions by date/amount, 13344, , null, , , Date, Ascending, null, true</td>
+<td></td>
+<td>65</td>
+<td>com.fintech.tests.AccountTests@5552768b</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.testAccountFunctionality()'><b>testAccountFunctionality</b><br>Test class: com.fintech.tests.AccountTests<br>Parameters: Filter transactions by date range, 13344, , null, 09/01/2025, 09/30/2025, , , null, true</td>
+<td></td>
+<td>100</td>
+<td>com.fintech.tests.AccountTests@5552768b</td></tr>
+<tr>
+<td title='com.fintech.tests.LoginTests.loginScenarios()'><b>loginScenarios</b><br>Test class: com.fintech.tests.LoginTests<br>Parameters: user@com, pass, INVALID_EMAIL</td>
+<td></td>
+<td>212</td>
+<td>com.fintech.tests.LoginTests@87a85e1</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.testSavingsAccountSummary()'><b>testSavingsAccountSummary</b><br>Test class: com.fintech.tests.AccountTests</td>
+<td></td>
+<td>15</td>
+<td>com.fintech.tests.AccountTests@5552768b</td></tr>
+<tr>
+<td title='com.fintech.tests.AuthTests.loginWithExcelData()'><b>loginWithExcelData</b><br>Test class: com.fintech.tests.AuthTests<br>Parameters: alice, pass123, INVALID</td>
+<td></td>
+<td>182</td>
+<td>com.fintech.tests.AuthTests@671a5887</td></tr>
+<tr>
+<td title='com.fintech.tests.NavigationUITests.logoRedirectsHome()'><b>logoRedirectsHome</b><br>Test class: com.fintech.tests.NavigationUITests</td>
+<td></td>
+<td>19</td>
+<td>com.fintech.tests.NavigationUITests@1356d4d4</td></tr>
+<tr>
+<td title='com.fintech.tests.NavigationUITests.topNavLinksLoadPages()'><b>topNavLinksLoadPages</b><br>Test class: com.fintech.tests.NavigationUITests<br>Parameters: Transfer Funds, transfer.htm, class com.fintech.pages.TransferPage</td>
+<td></td>
+<td>8</td>
+<td>com.fintech.tests.NavigationUITests@1356d4d4</td></tr>
+<tr>
+<td title='com.fintech.tests.AuthTests.logoutAfterLogin()'><b>logoutAfterLogin</b><br>Test class: com.fintech.tests.AuthTests<br>Parameters: john, demo</td>
+<td></td>
+<td>28</td>
+<td>com.fintech.tests.AuthTests@671a5887</td></tr>
+<tr>
+<td title='com.fintech.tests.ContactTests.openContactForm()'><b>openContactForm</b><br>Test class: com.fintech.tests.ContactTests</td>
+<td></td>
+<td>14</td>
+<td>com.fintech.tests.ContactTests@55f616cf</td></tr>
+<tr>
+<td title='com.fintech.tests.NavigationUITests.validateAlertBoxContent()'><b>validateAlertBoxContent</b><br>Test class: com.fintech.tests.NavigationUITests</td>
+<td></td>
+<td>6</td>
+<td>com.fintech.tests.NavigationUITests@1356d4d4</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.testTransactionDetailsFormat()'><b>testTransactionDetailsFormat</b><br>Test class: com.fintech.tests.AccountTests</td>
+<td></td>
+<td>47</td>
+<td>com.fintech.tests.AccountTests@5552768b</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.testTransactionSortingByDateAndAmount()'><b>testTransactionSortingByDateAndAmount</b><br>Test class: com.fintech.tests.AccountTests</td>
+<td></td>
+<td>63</td>
+<td>com.fintech.tests.AccountTests@5552768b</td></tr>
+<tr>
+<td title='com.fintech.tests.AuthTests.loginWithExcelData()'><b>loginWithExcelData</b><br>Test class: com.fintech.tests.AuthTests<br>Parameters: john, demo, SUCCESS</td>
+<td></td>
+<td>19</td>
+<td>com.fintech.tests.AuthTests@671a5887</td></tr>
+<tr>
+<td title='com.fintech.tests.AuthTests.logoutAfterLogin()'><b>logoutAfterLogin</b><br>Test class: com.fintech.tests.AuthTests<br>Parameters: john, wrong</td>
+<td></td>
+<td>237</td>
+<td>com.fintech.tests.AuthTests@671a5887</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.fintech.tests.ContactTests.submitContactForm()'><b>submitContactForm</b><br>Test class: com.fintech.tests.ContactTests<br>Parameters: , , null, , false</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
+Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [598bc5e4f578b06a2c8d516b284b4d18, maximizeCurrentWindow {}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 141.0.3537.85, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:61906}, msedge: {msedgedriverVersion: 141.0.3537.99 (1b2f83d6a142..., userDataDir: C:\Users\hp\AppData\Local\T...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61906/devtoo..., se:cdpVersion: 141.0.3537.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 598bc5e4f578b06a2c8d516b284b4d18
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:402)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:358)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:188)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:1039)
+	at com.fintech.tests.BaseTest.setupMethod(BaseTest.java:51)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:385)
+	... 31 more
+... Removed 15 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace532088374", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace532088374'><pre>org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
+Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [598bc5e4f578b06a2c8d516b284b4d18, maximizeCurrentWindow {}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 141.0.3537.85, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:61906}, msedge: {msedgedriverVersion: 141.0.3537.99 (1b2f83d6a142..., userDataDir: C:\Users\hp\AppData\Local\T...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61906/devtoo..., se:cdpVersion: 141.0.3537.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 598bc5e4f578b06a2c8d516b284b4d18
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:402)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:358)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:188)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:1039)
+	at com.fintech.tests.BaseTest.setupMethod(BaseTest.java:51)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:601)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:385)
+	... 31 more
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.ContactTests@55f616cf</td></tr>
+<tr>
+<td title='com.fintech.tests.LoanTests.submitValidLoanRequest()'><b>submitValidLoanRequest</b><br>Test class: com.fintech.tests.LoanTests</td>
+<td><div><pre>org.testng.SkipException: Session ended
+	at com.fintech.tests.LoanTests.submitValidLoanRequest(LoanTests.java:176)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 11 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1688057849", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1688057849'><pre>org.testng.SkipException: Session ended
+	at com.fintech.tests.LoanTests.submitValidLoanRequest(LoanTests.java:176)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.LoanTests@609db43b</td></tr>
+<tr>
+<td title='com.fintech.tests.TransferTests.validateFundsTransfer()'><b>validateFundsTransfer</b><br>Test class: com.fintech.tests.TransferTests<br>Parameters: EMPTY_FIELDS, 0.00, false</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.navigate()&quot; because &quot;this.driver&quot; is null
+	at com.fintech.tests.BaseTest.loginAsJohn(BaseTest.java:139)
+	at com.fintech.tests.TransferTests.setupAccountsOnce(TransferTests.java:26)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1802992575", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1802992575'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.navigate()&quot; because &quot;this.driver&quot; is null
+	at com.fintech.tests.BaseTest.loginAsJohn(BaseTest.java:139)
+	at com.fintech.tests.TransferTests.setupAccountsOnce(TransferTests.java:26)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.TransferTests@3c947bc5</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.testAccountFunctionality()'><b>testAccountFunctionality</b><br>Test class: com.fintech.tests.AccountTests<br>Parameters: Balance update after transfer, 13344, 14455, 100.0, 10/01/2025, 10/01/2025, Date, Ascending, 4392.93, true</td>
+<td><div><pre>org.testng.SkipException: ⚠️ Balance element not found or stale
+	at com.fintech.pages.AccountPage.getBalanceFromCurrentPage(AccountPage.java:160)
+	at com.fintech.pages.AccountPage.getBalance(AccountPage.java:169)
+	at com.fintech.tests.AccountTests.testAccountFunctionality(AccountTests.java:367)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //table[@id=&apos;accountTable&apos;]//tr[td[a[contains(@href,&apos;activity.htm?id=&apos;)]]]//td[2] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 141.0.3537.85, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:61088}, msedge: {msedgedriverVersion: 141.0.3537.99 (1b2f83d6a142..., userDataDir: C:\Users\hp\AppData\Local\T...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61088/devtoo..., se:cdpVersion: 141.0.3537.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 96a9ff39f4dd0af754723dff5299f112
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.fintech.pages.BasePage.waitForVisibility(BasePage.java:191)
+	at com.fintech.pages.AccountPage.getBalanceFromCurrentPage(AccountPage.java:146)
+	... 18 more
+... Removed 11 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace407367951", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace407367951'><pre>org.testng.SkipException: ⚠️ Balance element not found or stale
+	at com.fintech.pages.AccountPage.getBalanceFromCurrentPage(AccountPage.java:160)
+	at com.fintech.pages.AccountPage.getBalance(AccountPage.java:169)
+	at com.fintech.tests.AccountTests.testAccountFunctionality(AccountTests.java:367)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //table[@id=&apos;accountTable&apos;]//tr[td[a[contains(@href,&apos;activity.htm?id=&apos;)]]]//td[2] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 141.0.3537.85, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:61088}, msedge: {msedgedriverVersion: 141.0.3537.99 (1b2f83d6a142..., userDataDir: C:\Users\hp\AppData\Local\T...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61088/devtoo..., se:cdpVersion: 141.0.3537.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 96a9ff39f4dd0af754723dff5299f112
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.fintech.pages.BasePage.waitForVisibility(BasePage.java:191)
+	at com.fintech.pages.AccountPage.getBalanceFromCurrentPage(AccountPage.java:146)
+	... 18 more
+</pre></div></td>
+<td>30</td>
+<td>com.fintech.tests.AccountTests@5552768b</td></tr>
+<tr>
+<td title='com.fintech.tests.LoanTests.testLoanTyping()'><b>testLoanTyping</b><br>Test class: com.fintech.tests.LoanTests</td>
+<td><div><pre>org.testng.SkipException: Session ended
+	at com.fintech.tests.LoanTests.testLoanTyping(LoanTests.java:241)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 11 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace585358024", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace585358024'><pre>org.testng.SkipException: Session ended
+	at com.fintech.tests.LoanTests.testLoanTyping(LoanTests.java:241)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.LoanTests@609db43b</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.testBalanceUpdateAfterTransaction()'><b>testBalanceUpdateAfterTransaction</b><br>Test class: com.fintech.tests.AccountTests</td>
+<td><div><pre>org.testng.SkipException: ⚠️ Balance element not found or stale
+	at com.fintech.pages.AccountPage.getBalanceFromCurrentPage(AccountPage.java:160)
+	at com.fintech.pages.AccountPage.getBalance(AccountPage.java:169)
+	at com.fintech.tests.AccountTests.testBalanceUpdateAfterTransaction(AccountTests.java:130)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //table[@id=&apos;accountTable&apos;]//tr[td[a[contains(@href,&apos;activity.htm?id=&apos;)]]]//td[2] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 141.0.3537.85, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:62305}, msedge: {msedgedriverVersion: 141.0.3537.99 (1b2f83d6a142..., userDataDir: C:\Users\hp\AppData\Local\T...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62305/devtoo..., se:cdpVersion: 141.0.3537.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ade7751899992b734db992d62e8a429c
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.fintech.pages.BasePage.waitForVisibility(BasePage.java:191)
+	at com.fintech.pages.AccountPage.getBalanceFromCurrentPage(AccountPage.java:146)
+	... 18 more
+... Removed 11 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1581016851", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1581016851'><pre>org.testng.SkipException: ⚠️ Balance element not found or stale
+	at com.fintech.pages.AccountPage.getBalanceFromCurrentPage(AccountPage.java:160)
+	at com.fintech.pages.AccountPage.getBalance(AccountPage.java:169)
+	at com.fintech.tests.AccountTests.testBalanceUpdateAfterTransaction(AccountTests.java:130)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //table[@id=&apos;accountTable&apos;]//tr[td[a[contains(@href,&apos;activity.htm?id=&apos;)]]]//td[2] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 141.0.3537.85, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:62305}, msedge: {msedgedriverVersion: 141.0.3537.99 (1b2f83d6a142..., userDataDir: C:\Users\hp\AppData\Local\T...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62305/devtoo..., se:cdpVersion: 141.0.3537.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ade7751899992b734db992d62e8a429c
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.fintech.pages.BasePage.waitForVisibility(BasePage.java:191)
+	at com.fintech.pages.AccountPage.getBalanceFromCurrentPage(AccountPage.java:146)
+	... 18 more
+</pre></div></td>
+<td>28</td>
+<td>com.fintech.tests.AccountTests@5552768b</td></tr>
+<tr>
+<td title='com.fintech.tests.AccountTests.testAccountFunctionality()'><b>testAccountFunctionality</b><br>Test class: com.fintech.tests.AccountTests<br>Parameters: Validate account summary, 13344, , null, , , , , 2942.93, true</td>
+<td><div><pre>org.testng.SkipException: ⚠️ Balance element not found or stale
+	at com.fintech.pages.AccountPage.getBalanceFromCurrentPage(AccountPage.java:160)
+	at com.fintech.tests.AccountTests.testAccountFunctionality(AccountTests.java:459)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //table[@id=&apos;accountTable&apos;]//tr[td[a[contains(@href,&apos;activity.htm?id=&apos;)]]]//td[2] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 141.0.3537.85, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:62200}, msedge: {msedgedriverVersion: 141.0.3537.99 (1b2f83d6a142..., userDataDir: C:\Users\hp\AppData\Local\T...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62200/devtoo..., se:cdpVersion: 141.0.3537.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9b6ce2ac37ceb37b95d813456f0dbd7a
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.fintech.pages.BasePage.waitForVisibility(BasePage.java:191)
+	at com.fintech.pages.AccountPage.getBalanceFromCurrentPage(AccountPage.java:146)
+	... 17 more
+... Removed 11 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace912014952", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace912014952'><pre>org.testng.SkipException: ⚠️ Balance element not found or stale
+	at com.fintech.pages.AccountPage.getBalanceFromCurrentPage(AccountPage.java:160)
+	at com.fintech.tests.AccountTests.testAccountFunctionality(AccountTests.java:459)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //table[@id=&apos;accountTable&apos;]//tr[td[a[contains(@href,&apos;activity.htm?id=&apos;)]]]//td[2] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 141.0.3537.85, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:62200}, msedge: {msedgedriverVersion: 141.0.3537.99 (1b2f83d6a142..., userDataDir: C:\Users\hp\AppData\Local\T...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62200/devtoo..., se:cdpVersion: 141.0.3537.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 9b6ce2ac37ceb37b95d813456f0dbd7a
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at com.fintech.pages.BasePage.waitForVisibility(BasePage.java:191)
+	at com.fintech.pages.AccountPage.getBalanceFromCurrentPage(AccountPage.java:146)
+	... 17 more
+</pre></div></td>
+<td>28</td>
+<td>com.fintech.tests.AccountTests@5552768b</td></tr>
+<tr>
+<td title='com.fintech.tests.TransferTests.validateFundsTransfer()'><b>validateFundsTransfer</b><br>Test class: com.fintech.tests.TransferTests<br>Parameters: SAME_ACCOUNT, 100, false</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.navigate()&quot; because &quot;this.driver&quot; is null
+	at com.fintech.tests.BaseTest.loginAsJohn(BaseTest.java:139)
+	at com.fintech.tests.TransferTests.setupAccountsOnce(TransferTests.java:26)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1961733402", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1961733402'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.navigate()&quot; because &quot;this.driver&quot; is null
+	at com.fintech.tests.BaseTest.loginAsJohn(BaseTest.java:139)
+	at com.fintech.tests.TransferTests.setupAccountsOnce(TransferTests.java:26)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.TransferTests@3c947bc5</td></tr>
+<tr>
+<td title='com.fintech.tests.ContactTests.verifyContactSuccessMessage()'><b>verifyContactSuccessMessage</b><br>Test class: com.fintech.tests.ContactTests</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
+Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [598bc5e4f578b06a2c8d516b284b4d18, maximizeCurrentWindow {}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 141.0.3537.85, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:61906}, msedge: {msedgedriverVersion: 141.0.3537.99 (1b2f83d6a142..., userDataDir: C:\Users\hp\AppData\Local\T...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61906/devtoo..., se:cdpVersion: 141.0.3537.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 598bc5e4f578b06a2c8d516b284b4d18
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:402)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:358)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:188)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:1039)
+	at com.fintech.tests.BaseTest.setupMethod(BaseTest.java:51)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:385)
+	... 31 more
+... Removed 15 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace171472096", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace171472096'><pre>org.openqa.selenium.TimeoutException: java.util.concurrent.TimeoutException
+Build info: version: &apos;4.16.1&apos;, revision: &apos;9b4c83354e&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [598bc5e4f578b06a2c8d516b284b4d18, maximizeCurrentWindow {}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 141.0.3537.85, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:61906}, msedge: {msedgedriverVersion: 141.0.3537.99 (1b2f83d6a142..., userDataDir: C:\Users\hp\AppData\Local\T...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61906/devtoo..., se:cdpVersion: 141.0.3537.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 598bc5e4f578b06a2c8d516b284b4d18
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:402)
+	at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
+	at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:55)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute(JdkHttpClient.java:358)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:188)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:200)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:175)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:523)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:596)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
+	at org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteWindow.maximize(RemoteWebDriver.java:1039)
+	at com.fintech.tests.BaseTest.setupMethod(BaseTest.java:51)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:601)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: java.util.concurrent.TimeoutException
+	at java.base/java.util.concurrent.CompletableFuture.timedGet(CompletableFuture.java:1960)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2095)
+	at org.openqa.selenium.remote.http.jdk.JdkHttpClient.execute0(JdkHttpClient.java:385)
+	... 31 more
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.ContactTests@55f616cf</td></tr>
+<tr>
+<td title='com.fintech.tests.TransferTests.validateFundsTransfer()'><b>validateFundsTransfer</b><br>Test class: com.fintech.tests.TransferTests<br>Parameters: VALID_TRANSFER, 1.00, true</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.navigate()&quot; because &quot;this.driver&quot; is null
+	at com.fintech.tests.BaseTest.loginAsJohn(BaseTest.java:139)
+	at com.fintech.tests.TransferTests.setupAccountsOnce(TransferTests.java:26)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1516023911", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1516023911'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.navigate()&quot; because &quot;this.driver&quot; is null
+	at com.fintech.tests.BaseTest.loginAsJohn(BaseTest.java:139)
+	at com.fintech.tests.TransferTests.setupAccountsOnce(TransferTests.java:26)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.TransferTests@3c947bc5</td></tr>
+<tr>
+<td title='com.fintech.tests.LoanTests.applyLoan()'><b>applyLoan</b><br>Test class: com.fintech.tests.LoanTests<br>Parameters: Missing Info, null, null, null, false</td>
+<td><div><pre>org.testng.SkipException: Session ended
+	at com.fintech.tests.LoanTests.applyLoan(LoanTests.java:28)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 11 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1808948910", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1808948910'><pre>org.testng.SkipException: Session ended
+	at com.fintech.tests.LoanTests.applyLoan(LoanTests.java:28)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.LoanTests@609db43b</td></tr>
+<tr>
+<td title='com.fintech.tests.TransferTests.validateSimpleTransferSuccess()'><b>validateSimpleTransferSuccess</b><br>Test class: com.fintech.tests.TransferTests</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.navigate()&quot; because &quot;this.driver&quot; is null
+	at com.fintech.tests.BaseTest.loginAsJohn(BaseTest.java:139)
+	at com.fintech.tests.TransferTests.setupAccountsOnce(TransferTests.java:26)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 9 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1998838494", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1998838494'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebDriver.navigate()&quot; because &quot;this.driver&quot; is null
+	at com.fintech.tests.BaseTest.loginAsJohn(BaseTest.java:139)
+	at com.fintech.tests.TransferTests.setupAccountsOnce(TransferTests.java:26)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestMethodWorker.invokeBeforeClassMethods(TestMethodWorker.java:188)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.testng.internal.thread.graph.TestNGFutureTask.run(TestNGFutureTask.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+</pre></div></td>
+<td>0</td>
+<td>com.fintech.tests.TransferTests@3c947bc5</td></tr>
+</table><p>
+</body>
+</html>

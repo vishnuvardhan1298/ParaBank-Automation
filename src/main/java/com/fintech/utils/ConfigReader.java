@@ -18,4 +18,9 @@ public class ConfigReader {
     public static String get(String key) {
         return props.getProperty(key);
     }
+    public static String get(String key, String defaultValue) {
+        String value = props.getProperty(key);
+        return (value != null && !value.trim().isEmpty()) ? value : defaultValue;
+    }
+
 }

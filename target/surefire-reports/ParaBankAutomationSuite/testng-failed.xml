@@ -1,18 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite thread-count="2" parallel="tests" name="Failed suite [ParaBankAutomationSuite]" guice-stage="DEVELOPMENT" verbose="0">
-  <test thread-count="2" parallel="tests" name="EdgeTests(failed)" verbose="0">
-    <parameter name="browser" value="edge"/>
+<suite thread-count="6" parallel="classes" name="Failed suite [ParaBankAutomationSuite]" verbose="0">
+  <test thread-count="6" parallel="classes" name="ChromeRun(failed)" verbose="0">
+    <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.fintech.tests.LoanTests">
+      <class name="com.fintech.tests.LoginTests">
         <methods>
           <include name="startTest"/>
           <include name="finishReport"/>
           <include name="initReport"/>
-          <include name="setupClass"/>
-          <include name="applyLoan" invocation-numbers="0 1"/>
+          <include name="beforeClassLog"/>
           <include name="afterMethod"/>
-          <include name="tearDownClass"/>
+          <include name="setupMethod"/>
+          <include name="loginScenarios" invocation-numbers="0 1 2 4"/>
+        </methods>
+      </class> <!-- com.fintech.tests.LoginTests -->
+      <class name="com.fintech.tests.LoanTests">
+        <methods>
+          <include name="startTest"/>
+          <include name="finishReport"/>
+          <include name="testLoanTyping"/>
+          <include name="initReport"/>
+          <include name="beforeClassLog"/>
+          <include name="submitValidLoanRequest"/>
+          <include name="afterMethod"/>
+          <include name="applyLoan" invocation-numbers="0"/>
+          <include name="setupMethod"/>
         </methods>
       </class> <!-- com.fintech.tests.LoanTests -->
       <class name="com.fintech.tests.ContactTests">
@@ -21,158 +34,177 @@
           <include name="finishReport"/>
           <include name="initReport"/>
           <include name="submitContactForm" invocation-numbers="0 1"/>
-          <include name="setupClass"/>
+          <include name="openContactForm"/>
+          <include name="beforeClassLog"/>
           <include name="afterMethod"/>
-          <include name="tearDownClass"/>
+          <include name="setupMethod"/>
         </methods>
       </class> <!-- com.fintech.tests.ContactTests -->
-      <class name="com.fintech.tests.AuthTests">
-        <methods>
-          <include name="startTest"/>
-          <include name="finishReport"/>
-          <include name="sessionTimeoutSimulation"/>
-          <include name="initReport"/>
-          <include name="setupClass"/>
-          <include name="afterMethod"/>
-          <include name="tearDownClass"/>
-        </methods>
-      </class> <!-- com.fintech.tests.AuthTests -->
-      <class name="com.fintech.tests.AccountTests">
-        <methods>
-          <include name="sortTransactionsByField" invocation-numbers="0 1"/>
-          <include name="startTest"/>
-          <include name="finishReport"/>
-          <include name="initReport"/>
-          <include name="setupClass"/>
-          <include name="viewAccountSummary" invocation-numbers="0 1"/>
-          <include name="afterMethod"/>
-          <include name="filterTransactionsByDateRange" invocation-numbers="0 1"/>
-          <include name="tearDownClass"/>
-          <include name="viewFullTransactionHistory" invocation-numbers="0 1"/>
-          <include name="validateBalanceAfterTransaction" invocation-numbers="0 1"/>
-          <include name="validateTransactionDetailsFormat" invocation-numbers="0 1"/>
-        </methods>
-      </class> <!-- com.fintech.tests.AccountTests -->
-      <class name="com.fintech.tests.TransferTests">
-        <methods>
-          <include name="startTest"/>
-          <include name="finishReport"/>
-          <include name="initReport"/>
-          <include name="setupClass"/>
-          <include name="afterMethod"/>
-          <include name="tearDownClass"/>
-          <include name="transferBetweenAccounts" invocation-numbers="0 1"/>
-        </methods>
-      </class> <!-- com.fintech.tests.TransferTests -->
       <class name="com.fintech.tests.NavigationUITests">
         <methods>
           <include name="startTest"/>
           <include name="finishReport"/>
-          <include name="topNavLinksLoadPages" invocation-numbers="0 1 2 3"/>
+          <include name="topNavLinksLoadPages" invocation-numbers="0"/>
           <include name="initReport"/>
-          <include name="verifyFontAndAlignment"/>
           <include name="logoRedirectsHome"/>
-          <include name="validateAlertBoxContent"/>
-          <include name="setupClass"/>
-          <include name="validateButtonsAreClickable"/>
+          <include name="beforeClassLog"/>
           <include name="checkParaBankConnectivity"/>
           <include name="afterMethod"/>
-          <include name="tearDownClass"/>
+          <include name="setupMethod"/>
         </methods>
       </class> <!-- com.fintech.tests.NavigationUITests -->
+      <class name="com.fintech.tests.AuthTests">
+        <methods>
+          <include name="startTest"/>
+          <include name="finishReport"/>
+          <include name="initReport"/>
+          <include name="logoutAfterLogin" invocation-numbers="1"/>
+          <include name="beforeClassLog"/>
+          <include name="afterMethod"/>
+          <include name="setupMethod"/>
+          <include name="loginWithExcelData" invocation-numbers="0 1 2 3"/>
+        </methods>
+      </class> <!-- com.fintech.tests.AuthTests -->
+      <class name="com.fintech.tests.TransferTests">
+        <methods>
+          <include name="startTest"/>
+          <include name="validateSimpleTransferSuccess"/>
+          <include name="finishReport"/>
+          <include name="initReport"/>
+          <include name="beforeClassLog"/>
+          <include name="setupAccountsOnce"/>
+          <include name="setupTransferContext"/>
+          <include name="afterMethod"/>
+          <include name="setupMethod"/>
+          <include name="validateFundsTransfer"/>
+        </methods>
+      </class> <!-- com.fintech.tests.TransferTests -->
+      <class name="com.fintech.tests.AccountTests">
+        <methods>
+          <include name="startTest"/>
+          <include name="initReport"/>
+          <include name="testSavingsAccountSummary"/>
+          <include name="testTransactionFilterByDateRange"/>
+          <include name="testBalanceUpdateAfterTransaction"/>
+          <include name="afterMethod"/>
+          <include name="testTransactionSortingByDateAndAmount"/>
+          <include name="testFullTransactionHistory"/>
+          <include name="testTransactionDetailsFormat"/>
+          <include name="testAccountFunctionality" invocation-numbers="0"/>
+          <include name="resetBrowser"/>
+          <include name="finishReport"/>
+          <include name="beforeClassLog"/>
+          <include name="testCheckingAccountSummary"/>
+          <include name="setupMethod"/>
+        </methods>
+      </class> <!-- com.fintech.tests.AccountTests -->
+    </classes>
+  </test> <!-- ChromeRun(failed) -->
+  <test thread-count="6" parallel="classes" name="EdgeRun(failed)" verbose="0">
+    <parameter name="browser" value="edge"/>
+    <classes>
       <class name="com.fintech.tests.LoginTests">
         <methods>
           <include name="startTest"/>
           <include name="finishReport"/>
           <include name="initReport"/>
           <include name="rememberMeSimulation"/>
+          <include name="beforeClassLog"/>
           <include name="sessionTimeoutSimulation"/>
-          <include name="setupClass"/>
           <include name="afterMethod"/>
           <include name="passwordMasking"/>
-          <include name="tearDownClass"/>
-          <include name="loginScenarios" invocation-numbers="2 3 4"/>
+          <include name="setupMethod"/>
+          <include name="loginScenarios"/>
         </methods>
       </class> <!-- com.fintech.tests.LoginTests -->
-    </classes>
-  </test> <!-- EdgeTests(failed) -->
-  <test thread-count="2" parallel="tests" name="ChromeTests(failed)" verbose="0">
-    <parameter name="browser" value="chrome"/>
-    <classes>
       <class name="com.fintech.tests.LoanTests">
         <methods>
           <include name="startTest"/>
           <include name="finishReport"/>
+          <include name="testLoanTyping"/>
           <include name="initReport"/>
-          <include name="setupClass"/>
+          <include name="beforeClassLog"/>
+          <include name="submitValidLoanRequest"/>
+          <include name="applyLoan"/>
           <include name="afterMethod"/>
-          <include name="applyLoan" invocation-numbers="0 1"/>
-          <include name="tearDownClass"/>
+          <include name="setupMethod"/>
         </methods>
       </class> <!-- com.fintech.tests.LoanTests -->
       <class name="com.fintech.tests.ContactTests">
         <methods>
           <include name="startTest"/>
           <include name="finishReport"/>
+          <include name="verifyContactSuccessMessage"/>
           <include name="initReport"/>
-          <include name="submitContactForm" invocation-numbers="0 1"/>
-          <include name="setupClass"/>
+          <include name="submitContactForm"/>
+          <include name="openContactForm"/>
+          <include name="beforeClassLog"/>
           <include name="afterMethod"/>
-          <include name="tearDownClass"/>
+          <include name="setupMethod"/>
         </methods>
       </class> <!-- com.fintech.tests.ContactTests -->
+      <class name="com.fintech.tests.NavigationUITests">
+        <methods>
+          <include name="startTest"/>
+          <include name="finishReport"/>
+          <include name="topNavLinksLoadPages"/>
+          <include name="initReport"/>
+          <include name="verifyFontAndAlignment"/>
+          <include name="logoRedirectsHome"/>
+          <include name="validateAlertBoxContent"/>
+          <include name="beforeClassLog"/>
+          <include name="checkParaBankConnectivity"/>
+          <include name="validateButtonsAreClickable"/>
+          <include name="afterMethod"/>
+          <include name="setupMethod"/>
+        </methods>
+      </class> <!-- com.fintech.tests.NavigationUITests -->
       <class name="com.fintech.tests.AuthTests">
         <methods>
           <include name="startTest"/>
           <include name="finishReport"/>
           <include name="sessionTimeoutSimulation"/>
           <include name="initReport"/>
-          <include name="setupClass"/>
+          <include name="logoutAfterLogin"/>
+          <include name="beforeClassLog"/>
           <include name="afterMethod"/>
-          <include name="tearDownClass"/>
+          <include name="setupMethod"/>
+          <include name="loginWithExcelData"/>
         </methods>
       </class> <!-- com.fintech.tests.AuthTests -->
-      <class name="com.fintech.tests.AccountTests">
-        <methods>
-          <include name="sortTransactionsByField" invocation-numbers="0 1"/>
-          <include name="startTest"/>
-          <include name="finishReport"/>
-          <include name="initReport"/>
-          <include name="setupClass"/>
-          <include name="afterMethod"/>
-          <include name="viewAccountSummary" invocation-numbers="0 1"/>
-          <include name="tearDownClass"/>
-          <include name="viewFullTransactionHistory" invocation-numbers="0 1"/>
-          <include name="filterTransactionsByDateRange" invocation-numbers="0 1"/>
-          <include name="validateTransactionDetailsFormat" invocation-numbers="0 1"/>
-          <include name="validateBalanceAfterTransaction" invocation-numbers="0 1"/>
-        </methods>
-      </class> <!-- com.fintech.tests.AccountTests -->
       <class name="com.fintech.tests.TransferTests">
         <methods>
           <include name="startTest"/>
+          <include name="validateSimpleTransferSuccess"/>
           <include name="finishReport"/>
           <include name="initReport"/>
-          <include name="setupClass"/>
+          <include name="beforeClassLog"/>
+          <include name="setupAccountsOnce"/>
+          <include name="setupTransferContext"/>
           <include name="afterMethod"/>
-          <include name="tearDownClass"/>
-          <include name="transferBetweenAccounts" invocation-numbers="0 1"/>
+          <include name="setupMethod"/>
+          <include name="validateFundsTransfer"/>
         </methods>
       </class> <!-- com.fintech.tests.TransferTests -->
-      <class name="com.fintech.tests.LoginTests">
+      <class name="com.fintech.tests.AccountTests">
         <methods>
           <include name="startTest"/>
-          <include name="finishReport"/>
-          <include name="rememberMeSimulation"/>
           <include name="initReport"/>
-          <include name="sessionTimeoutSimulation"/>
-          <include name="setupClass"/>
-          <include name="passwordMasking"/>
+          <include name="testSavingsAccountSummary"/>
+          <include name="testTransactionFilterByDateRange"/>
           <include name="afterMethod"/>
-          <include name="tearDownClass"/>
-          <include name="loginScenarios" invocation-numbers="2 3 4"/>
+          <include name="testBalanceUpdateAfterTransaction"/>
+          <include name="testTransactionSortingByDateAndAmount"/>
+          <include name="testFullTransactionHistory"/>
+          <include name="testTransactionDetailsFormat"/>
+          <include name="testAccountFunctionality"/>
+          <include name="resetBrowser"/>
+          <include name="finishReport"/>
+          <include name="beforeClassLog"/>
+          <include name="testCheckingAccountSummary"/>
+          <include name="setupMethod"/>
         </methods>
-      </class> <!-- com.fintech.tests.LoginTests -->
+      </class> <!-- com.fintech.tests.AccountTests -->
     </classes>
-  </test> <!-- ChromeTests(failed) -->
+  </test> <!-- EdgeRun(failed) -->
 </suite> <!-- Failed suite [ParaBankAutomationSuite] -->
