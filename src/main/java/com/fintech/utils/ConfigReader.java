@@ -22,5 +22,4 @@ public class ConfigReader {
         String value = props.getProperty(key);
         return (value != null && !value.trim().isEmpty()) ? value : defaultValue;
     }
-
 }

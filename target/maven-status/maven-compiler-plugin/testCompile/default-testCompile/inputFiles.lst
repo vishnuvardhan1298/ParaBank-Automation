@@ -1,4 +1,3 @@
-C:\Users\hp\eclipse-workspace\ParaBankAutomation\src\test\java\com\fintech\tests\AccountTests.java
 C:\Users\hp\eclipse-workspace\ParaBankAutomation\src\test\java\com\fintech\dataproviders\JsonDataProvider.java
 C:\Users\hp\eclipse-workspace\ParaBankAutomation\src\test\java\com\fintech\tests\AuthTests.java
 C:\Users\hp\eclipse-workspace\ParaBankAutomation\src\test\java\com\fintech\assertions\AssertUtils.java
@@ -9,4 +8,7 @@ C:\Users\hp\eclipse-workspace\ParaBankAutomation\src\test\java\com\fintech\tests
 C:\Users\hp\eclipse-workspace\ParaBankAutomation\src\test\java\com\fintech\utils\RetryAnalyzer.java
 C:\Users\hp\eclipse-workspace\ParaBankAutomation\src\test\java\com\fintech\tests\LoanTests.java
 C:\Users\hp\eclipse-workspace\ParaBankAutomation\src\test\java\com\fintech\utils\RetryFailedTests.java
+C:\Users\hp\eclipse-workspace\ParaBankAutomation\src\test\java\com\fintech\utils\TestDataProvider.java
+C:\Users\hp\eclipse-workspace\ParaBankAutomation\src\test\java\com\fintech\tests\AccountTests.java
+C:\Users\hp\eclipse-workspace\ParaBankAutomation\src\test\java\com\fintech\tests\AccountPage.java
 C:\Users\hp\eclipse-workspace\ParaBankAutomation\src\test\java\com\fintech\tests\TransferTests.java

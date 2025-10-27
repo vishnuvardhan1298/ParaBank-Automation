@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite name="ParaBankAutomationSuite" parallel="classes" thread-count="6">
+<suite name="ParaBankAutomationSuite" parallel="tests" thread-count="2">
 
     <!-- Run Chrome tests in parallel -->
     <test name="ChromeRun">

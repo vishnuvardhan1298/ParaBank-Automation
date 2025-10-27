@@ -3,20 +3,20 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.fintech.tests.TransferTests">
+      <class name="com.fintech.tests.AccountTests">
         <methods>
           <include name="startTest"/>
-          <include name="validateSimpleTransferSuccess"/>
+          <include name="resetBrowser"/>
           <include name="finishReport"/>
           <include name="initReport"/>
-          <include name="setupAccountPage"/>
           <include name="beforeClassLog"/>
-          <include name="setupTransferContext"/>
           <include name="afterMethod"/>
+          <include name="testBalanceUpdateAfterTransaction"/>
+          <include name="testFullTransactionHistory"/>
           <include name="setupMethod"/>
-          <include name="validateFundsTransfer"/>
+          <include name="testAccountFunctionality" invocation-numbers="0 3"/>
         </methods>
-      </class> <!-- com.fintech.tests.TransferTests -->
+      </class> <!-- com.fintech.tests.AccountTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

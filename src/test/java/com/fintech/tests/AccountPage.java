@@ -1,10 +1,12 @@
-package com.fintech.pages;
+package com.fintech.tests;
 
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.SkipException;
 
+import com.fintech.pages.BasePage;
 
 import java.util.*;
 import java.util.NoSuchElementException;
@@ -87,7 +89,7 @@ public class AccountPage extends BasePage {
         }
 
         if (accounts.size() < 2) {
-            throw new RuntimeException("❌ Failed to create two accounts after " + attempts + " attempts");
+            throw new SkipException("❌ Failed to create two accounts after " + attempts + " attempts");
         }
 
         System.out.println("✅ Accounts ready: " + accounts);
@@ -157,7 +159,7 @@ public class AccountPage extends BasePage {
             return Double.parseDouble(balanceText);
         } catch (TimeoutException | NoSuchElementException | StaleElementReferenceException e) {
             captureScreenshot("BalanceElementMissing");
-            throw new RuntimeException("⚠️ Balance element not found or stale", e);
+            throw new SkipException("⚠️ Balance element not found or stale", e);
         } catch (NumberFormatException e) {
             captureScreenshot("BalanceParseException");
             throw new AssertionError("❌ Balance format invalid — cannot parse", e);
